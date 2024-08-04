@@ -19,8 +19,12 @@ router.get('/allVideos', (req, res) => {
 
 router.get('/:id', (req, res) => {
     //Forma directa de mandar el video send.File()
-    /*  
-    let filePath = ''   
+    /**
+     * 
+     * //Forma directa de mandar el video send.File()
+     * 
+
+    let filePath = ''    
     VideosList.forEach(element => {
         if(element.id == req.params.id){videoPath = element.path}
     })
