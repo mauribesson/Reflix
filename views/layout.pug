@@ -1,18 +1,22 @@
 doctype html
 html
   head
-    title= title
-    
+    title= title    
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
   div
+    //- NAVBAR
     ul
       li
         a(href="/") Home - ReFlix 📹🎞
-      li
-        a(href="/Usuarios") Usuarios
-      li
-        a(href="/Nosotros") Nosotros
       li 
-        a(href="/Videos") Videos     
+        a(href="/videos/allVideos") Videos     
+      li
+        a(href="/users/allUsers") Usuarios
+      li
+        a(href="/about") Nosotros
     block content
+    //- FOOTER
+    div.footer
+      p &#169;Copyright  mauribesson 2024 - v0.0.1
+

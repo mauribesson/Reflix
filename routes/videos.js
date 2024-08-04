@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-const rootPath = process.cwd()
+const rootPath = process.cwd()  
 
 const VideosList = [
     {"id":1, "name":"demo 01", "path":"./public/videos/1-file_example_MP4_480_1_5MG.mp4"},
@@ -12,6 +12,10 @@ const VideosList = [
     {"id":6, "name":"ScoobyDoo - E004 - T001", "path":"./public/videos/ScoobyDoo-E004-T01.mp4"}
 ]
 
+router.get('/allVideos', (req, res) => {
+    res.json(VideosList)
+})
+
 router.get('/:id', (req, res)=> {
     videoPath = ''
     VideosList.forEach(element => {
@@ -20,7 +24,7 @@ router.get('/:id', (req, res)=> {
     res.sendFile(videoPath, {root:rootPath})
 })
 
-router.get('', (req, res) => {})
+
 
 
 module.exports = router;

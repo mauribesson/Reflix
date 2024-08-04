@@ -7,7 +7,8 @@ var favicon = require('serve-favicon')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var viedeoRouter = require('./routes/videos')
+var viedeoRouter = require('./routes/videos');
+var aboutRouter = require('./routes/about');
 
 var app = express();
 
@@ -21,11 +22,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/videos',viedeoRouter);
+app.use('/about', aboutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
